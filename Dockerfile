@@ -1,12 +1,23 @@
-FROM ubuntu:20.04
+FROM nvcr.io/nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04
+
+ENV TZ=America/Chicago
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 
 RUN apt -y update && apt -y upgrade
 
-RUN apt -y install python3 python3-pip
+RUN apt -y install python3 python3-pip git
+
+RUN apt-get install -y --allow-change-held-packages \
+    libcudnn8-dev\
+    libcudnn8\
+    libnvinfer-dev\
+    tensorrt 
 
 RUN pip3 install --upgrade pip
 
-RUN pip3 install numpy pandas matplotlib seaborn sklearn
+RUN pip3 install numpy pandas matplotlib seaborn scikit-learn
 
 RUN pip3 install jupyterlab
 
@@ -18,4 +29,4 @@ WORKDIR /workspace
 EXPOSE 8888
 
 
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--no-browser", "--LabApp.token=''", "--port=8888", "--lab-app-password='"]
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
