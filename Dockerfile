@@ -23,6 +23,8 @@ RUN pip3 install jupyterlab
 
 RUN pip3 install tensorflow
 
+RUN pip3 install scikit-image
+
 COPY jupyter_notebook_config.py /root/.jupyter/
 
 WORKDIR /workspace
