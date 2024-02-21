@@ -36,6 +36,7 @@ RUN pip3 install scikit-image
 
 COPY jupyter_notebook_config.py /root/.jupyter/
 COPY kaggle.json /root/.kaggle/
+RUN chmod 600 /root/.kaggle/kaggle.json
 
 WORKDIR /workspace
 EXPOSE 8888
