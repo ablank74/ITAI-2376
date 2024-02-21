@@ -34,6 +34,8 @@ RUN pip3 install \
 
 RUN pip3 install scikit-image
 
+RUN pip3 install kaggle
+
 COPY jupyter_notebook_config.py /root/.jupyter/
 COPY kaggle.json /root/.kaggle/
 RUN chmod 600 /root/.kaggle/kaggle.json
