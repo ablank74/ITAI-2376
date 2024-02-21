@@ -17,13 +17,20 @@ RUN apt-get install -y --allow-change-held-packages \
 
 RUN pip3 install --upgrade pip
 
-RUN pip3 install numpy pandas matplotlib seaborn scikit-learn
+RUN pip3 install \
+    numpy \
+    pandas \
+    matplotlib \
+    seaborn \
+    scikit-learn
 
 RUN pip3 install jupyterlab
 
 RUN pip3 install tensorflow
 
-RUN pip3 install torch
+RUN pip3 install \ 
+    torch \
+    torchvision
 
 RUN pip3 install scikit-image
 
