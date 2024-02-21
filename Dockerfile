@@ -35,6 +35,7 @@ RUN pip3 install \
 RUN pip3 install scikit-image
 
 COPY jupyter_notebook_config.py /root/.jupyter/
+COPY kaggle.json /root/.kaggle/
 
 WORKDIR /workspace
 EXPOSE 8888
