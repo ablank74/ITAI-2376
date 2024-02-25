@@ -22,17 +22,18 @@ RUN pip3 install \
     pandas \
     matplotlib \
     seaborn \
-    scikit-learn
+    scikit-learn \
+    scikit-image
 
 RUN pip3 install jupyterlab
 
+# Installing TensorFlow
 RUN pip3 install tensorflow
 
+# Installing PyTorch
 RUN pip3 install \ 
     torch \
     torchvision
-
-RUN pip3 install scikit-image
 
 RUN pip3 install kaggle
 
