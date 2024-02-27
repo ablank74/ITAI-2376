@@ -1,4 +1,5 @@
-FROM nvcr.io/nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04
+#FROM nvcr.io/nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04
+FROM nvcr.io/nvidia/cuda:12.2.2-cudnn8-devel-ubuntu22.04
 
 ENV TZ=America/Chicago
 
