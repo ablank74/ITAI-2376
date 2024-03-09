@@ -11,6 +11,12 @@ else
   sudo systemctl restart docker
 fi
 
-
-docker build . -t itai-2376
+#prompt if we should rebuild the container
+read -p "Do you want to rebuild the container? (y/n) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    echo "Rebuilding the container"
+    docker build . -t itai-2376
+fi
 docker run -it --rm --gpus=all -p 8888:8888 -p 5000:5000 -v /home/adam/GitRepos/ITAI-2376/notebooks:/root/notebooks itai-2376
