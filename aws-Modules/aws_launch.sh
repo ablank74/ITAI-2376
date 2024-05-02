@@ -18,6 +18,6 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     echo "Rebuilding the container"
-    docker build . -t aws-itai-2376
+    docker build . -t aws-itai-2376 --no-cache
 fi
 docker run -it --rm --gpus=all -p 8888:8888 -p 5000:5000 -v /home/adam/GitRepos/ITAI-2376/aws-notebooks:/root/notebooks aws-itai-2376
