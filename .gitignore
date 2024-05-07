@@ -1,3 +1,5 @@
 notebooks/Module5/birds/
 notebooks/Module5/birds_model/
 notebooks/logs/
+aws-notebooks/AWS Module3 Lab1/SageMaker/data/cifar-10-python.tar.gz
+aws-notebooks/AWS Module3 Lab2/data/cifar-10-python.tar.gz
