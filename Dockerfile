@@ -39,11 +39,10 @@ RUN pip3 install \
 RUN pip3 install kaggle
 
 COPY jupyter_notebook_config.py /root/.jupyter/
-COPY kaggle.json /root/.kaggle/
-RUN chmod 600 /root/.kaggle/kaggle.json
+COPY jupyter_lab_config.py /root/.jupyter
 
 WORKDIR /workspace
 EXPOSE 8888
 
 
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root",  "--notebook-dir=/root/notebooks"]
